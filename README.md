@@ -8,6 +8,6 @@ The analysis is structured into four critical stages to ensure the model is both
 
 2- Probability Calibration: Using CalibratedClassifierCV (Isotonic/Sigmoid) to ensure that the predicted probabilities reflect real-world default frequencies.
 
-3- Threshold Optimization: Identifying the optimal decision cutoff by minimizing a custom cost function where a False Negative is penalized 4x more than a False Positive.
+3- Threshold Optimization: Identifying the optimal decision cutoff by minimizing a custom cost function where a False Negative is penalized 3x more than a False Positive.
 
 4- Robust Evaluation: Visualizing the Calibration Curve and Business Cost Curve to validate the model's reliability.
