@@ -54,15 +54,17 @@ Financial Cost = FN × 3 + FP × 1
 
 ## Experimental Benchmark Results
 
-Evaluated on an independent 25% stratified test holdout ($N = 7,500$ clients, 22.12% base default rate):
+Evaluated on an independent 25% stratified test holdout ($N = 7{,}500$ clients, 22.12% base default rate):
 
-| Contender Architecture | Decision Cutoff | ROC-AUC | Brier Score Loss | Macro F1 | Balanced Acc | Total Business Cost | Financial Cost / Client |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 🥇 **LightGBM (Calibrated + Tuned)** | **0.2670** | **0.7814** | **0.1341** | **0.7042** | **0.7103** | **$2,987** | **$0.3983** |
-| 🥈 **Optimal Blend (LGB + Cat)** | 0.2625 | 0.7852 | 0.1337 | 0.7028 | 0.7124 | $2,981 | $0.3975 |
-| 🥉 **AutoGluon (600s, best_quality)** | 0.2612 | 0.7865 | 0.1335 | 0.7035 | 0.7130 | $2,979 | $0.3972 |
-| **Stacking Classifier (Meta-LR)** | 0.2640 | 0.7849 | 0.1338 | 0.7011 | 0.7115 | $2,984 | $0.3979 |
-| **CatBoost (Calibrated + Tuned)** | 0.2590 | 0.7848 | 0.1339 | 0.6985 | 0.7118 | $2,995 | $0.3993 |
+| Contender Architecture | Decision Cutoff | ROC-AUC | Brier Score Loss | Macro F1 | Balanced Acc | Accuracy | Total Business Cost | Financial Cost / Client |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 🥇 **Stacking Classifier (Meta-LR)** | **0.2317** | **0.7840** | 0.1345 | 0.7024 | **0.7103** | 0.7872 | **$3,012** | **$0.4020** |
+| 🥈 **AutoGluon (600s, best_quality)** | 0.2728 | 0.7804 | 0.1345 | **0.7025** | 0.7080 | 0.7896 | $3,030 | $0.4044 |
+| 🥉 **CatBoost (Calibrated + Tuned)** | 0.2709 | 0.7838 | **0.1340** | 0.7019 | 0.7068 | 0.7898 | $3,041 | $0.4059 |
+| **Optimal Blend (LGB + Cat)** | 0.3009 | 0.7838 | **0.1340** | 0.7023 | 0.7010 | **0.7962** | $3,085 | $0.4118 |
+| **LightGBM (Calibrated + Tuned)** | 0.2552 | 0.7636 | 0.1390 | 0.6881 | 0.7006 | 0.7720 | $3,126 | $0.4172 |
+
+
 
 > **Key Quantitative Takeaway:** Adjusting the operational threshold from the arbitrary default ($\tau = 0.50$) to the cost-optimal cutoff ($\tau \approx 0.267$) **reduces credit default losses by over 24%**, capturing the vast majority of defaults while strictly bounding false investigations.
 
