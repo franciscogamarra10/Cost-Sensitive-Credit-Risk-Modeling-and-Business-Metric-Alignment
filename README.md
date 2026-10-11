@@ -66,7 +66,7 @@ Evaluated on an independent 25% stratified test holdout ($N = 7{,}500$ clients, 
 
 
 
-> **Key Quantitative Takeaway:** Adjusting the operational threshold from the arbitrary default ($\tau = 0.50$) to the cost-optimal cutoff ($\tau \approx 0.267$) **reduces credit default losses by over 24%**, capturing the vast majority of defaults while strictly bounding false investigations.
+> **Key Quantitative Takeaway:** Adjusting the operational threshold from the arbitrary default ($\tau = 0.50$) to the cost-optimal cutoff ($\tau \approx 0.2317$) **reduces credit default losses by over 24%**, capturing the vast majority of defaults while strictly bounding false investigations.
 
 ---
 
